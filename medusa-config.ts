@@ -7,9 +7,11 @@ module.exports = defineConfig({
     databaseUrl: process.env.DATABASE_URL,
     redisUrl: process.env.REDIS_URL,
     http: {
-      storeCors:  "*",
-      adminCors:  "*",
-      authCors:  "*",
+      storeCors: "/http:\\/\\/.+/",
+
+      adminCors: "/http:\\/\\/.+/",
+
+      authCors: "/http:\\/\\/.+/",
       jwtSecret: process.env.JWT_SECRET! || 'fadsfadf3244sd',
       cookieSecret: process.env.COOKIE_SECRET! || 'supersecret',
     },
